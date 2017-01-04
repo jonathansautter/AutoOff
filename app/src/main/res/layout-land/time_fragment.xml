@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/shutdown_device_at_specific_time_of_day"
+        android:id="@+id/textView7"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/main"
+        android:layout_below="@+id/textView7">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/timelayout"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#d7d7d7"
+                android:id="@+id/progrsstv"
+                android:textSize="200dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-40dp"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/uhr"
+                android:id="@+id/min"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#92ffffff"
+                android:textSize="48dp"
+                android:textAllCaps="true"
+                android:layout_below="@+id/progrsstv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-40dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:timePickerMode="clock"
+        android:visibility="invisible"
+        android:layout_below="@+id/textView7"
+        android:layout_centerHorizontal="true" />
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/stop"
+        fab:fab_size="normal"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="#496356"
+        fab:fab_colorRipple="#99FFFFFF"
+        android:visibility="invisible" />
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/extend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/extend"
+        fab:fab_size="normal"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="#496356"
+        fab:fab_colorRipple="#99FFFFFF"
+        android:visibility="invisible"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp" />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_menu"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        fab:menu_fab_size="normal"
+        fab:menu_showShadow="true"
+        fab:menu_colorNormal="@color/colorPrimary"
+        fab:menu_colorPressed="#496356"
+        fab:menu_colorRipple="#99FFFFFF"
+        fab:menu_animationDelayPerItem="50"
+        fab:menu_icon="@drawable/play"
+        fab:menu_buttonSpacing="0dp"
+        fab:menu_labels_margin="0dp"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_paddingTop="4dp"
+        fab:menu_labels_paddingRight="8dp"
+        fab:menu_labels_paddingBottom="4dp"
+        fab:menu_labels_paddingLeft="8dp"
+        fab:menu_labels_padding="8dp"
+        fab:menu_labels_textColor="#FFFFFF"
+        fab:menu_labels_textSize="14sp"
+        fab:menu_labels_cornerRadius="3dp"
+        fab:menu_labels_colorNormal="#333333"
+        fab:menu_labels_colorPressed="#444444"
+        fab:menu_labels_colorRipple="#66FFFFFF"
+        fab:menu_labels_showShadow="true"
+        fab:menu_labels_singleLine="false"
+        fab:menu_labels_ellipsize="none"
+        fab:menu_labels_maxLines="-1"
+        fab:menu_labels_position="left"
+        fab:menu_openDirection="up"
+        fab:menu_backgroundColor="@android:color/transparent" >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_always"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/infinite"
+            fab:fab_size="normal"
+            fab:fab_colorNormal="@color/colorPrimary"
+            fab:fab_colorPressed="#496356"
+            fab:fab_colorRipple="#99FFFFFF"
+            fab:fab_label="@string/start_repeating" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_once"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/once"
+            fab:fab_size="normal"
+            fab:fab_colorNormal="@color/colorPrimary"
+            fab:fab_colorPressed="#496356"
+            fab:fab_colorRipple="#99FFFFFF"
+            fab:fab_label="@string/start_once" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+</RelativeLayout>

@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/shutdown_device_in_set_time_in_minutes"
+        android:id="@+id/textView6"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_negative_20"
+        android:gravity="center"
+        android:layout_alignParentTop="false"
+        android:textSize="@dimen/fontsize_18" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main"
+        android:layout_below="@+id/textView6"
+        android:layout_above="@+id/start"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/timelayout">
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#d7d7d7"
+                android:id="@+id/progrsstv"
+                android:textSize="@dimen/fontsize_200"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/minutes"
+                android:id="@+id/min"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#92ffffff"
+                android:textSize="@dimen/fontsize_48"
+                android:layout_below="@+id/progrsstv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-40dp" />
+
+        </RelativeLayout>
+
+        <com.devadvance.circularseekbar.CircularSeekBar
+            android:id="@+id/circularSeekBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:start_angle="270"
+            app:end_angle="270"
+            app:circle_x_radius="5000dp"
+            app:circle_y_radius="5000dp"
+            app:use_custom_radii="true"
+            app:progress="0"
+            app:max="60"
+            app:move_outside_circle="true"
+            app:pointer_alpha_ontouch="100"
+            app:pointer_color="@color/colorAccent"
+            app:pointer_halo_color="@color/colorAccent"
+            app:circle_progress_color="@color/colorAccent"
+            app:circle_stroke_width="20dp"
+            app:lock_enabled="false"
+            app:maintain_equal_circle="true"
+            app:pointer_halo_border_width="5dp"
+            app:pointer_halo_color_ontouch="@color/colorAccent"
+            app:pointer_halo_width="0dp"
+            app:pointer_radius="20dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/circular_seekbar_margin"
+            android:layout_marginRight="@dimen/circular_seekbar_margin" />
+
+    </RelativeLayout>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:src="@drawable/stop"
+        fab:fab_size="normal"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="#496356"
+        fab:fab_colorRipple="#99FFFFFF"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_negative_20" />
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/extend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:src="@drawable/extend"
+        fab:fab_size="normal"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="#496356"
+        fab:fab_colorRipple="#99FFFFFF"
+        android:visibility="invisible"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/margin_20" />
+
+</RelativeLayout>

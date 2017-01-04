@@ -1,0 +1,105 @@
+<resources>
+
+    <string name="app_name" translatable="false">AutoOff - Shutdown Timer</string>
+    <string name="app_name_short" translatable="false">AutoOff</string>
+    <string name="noemailclient">No E-Mail client found!</string>
+    <string name="sendemailvia">Send E-Mail via…</string>
+    <string name="disclaimertext">Notice to users: Before using Shutdown Timer, please read the disclaimer carefully. You must agree to all terms below before you use the software. If you do not agree to all terms, do not use the software.\n\n(1) You will take all responsibility for potential risks and accidental damage caused by using this root tool.\n(2) Once the user set countdown finishes, the device will shutdown immediately no matter what. Unsaved data may get lost!\n(3) Although thoroughly tested, I cannot guarantee that this app is completely compatible and error free on all Operating Systems and versions of Operating Systems, nor can I guarantee compatibility with all hardware. If your device won\'t shutdown you may try the other shutdown methods provided in the settings section of this app.\n\nIf there are compatibility problems or software errors, you can contact me and send feedback at info@jonathansautter.de.</string>
+    <string name="maxminutes">Max. Minutes in Timer</string>
+    <string name="maxminutessum">Set maximum shutdown delay (default 60)</string>
+    <string name="extensiontime">Extension Time</string>
+    <string name="extensiontimesum">Set time to add to running timer (default 10)</string>
+    <string name="contact">Help/Bug report</string>
+    <string name="contactsum">Project on Github</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="agree">AGREE</string>
+    <string name="disagree">DON\'T AGREE</string>
+    <string name="sharetext">Give your smartphone a break, and sleep better without radiation from your device, or annoying interruptions!\n\nhttp://play.google.com/store/apps/details?id=</string>
+    <string name="sharevia">Share via…</string>
+    <string name="somethingwentwrong">Something went wrong. Please try again!</string>
+    <string name="timeralreadyrunning">Timer already running!</string>
+    <string name="timeralreadysettoshutdownat">"The Timer is already set to shutdown at "</string>
+    <string name="stoptimernowandshutdownin">".\nDo you want to stop the timer now and shutdown in "</string>
+    <string name="minutesinstead">" minutes instead?"</string>
+    <string name="minutesafterstandbyinstead">" minutes after device goes to standby instead?"</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="nosupermission">Could not gain superuser permissions</string>
+    <string name="shutdownin">"Shutdown in "</string>
+    <string name="stop">Stop</string>
+    <string name="extend">Extend</string>
+    <string name="shutdown">Shutdown</string>
+    <string name="countdown">Countdown</string>
+    <string name="time">Clock Time</string>
+    <string name="settings">Settings</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="timeralreadysettoshutdownin">"The Timer is already set to shutdown in "</string>
+    <string name="stoptimernowandshutdownat">" minutes.\nDo you want to stop the timer now and shutdown at "</string>
+    <string name="instead">" instead?"</string>
+    <string name="minutes">MINUTES</string>
+    <string name="rate">Rate</string>
+    <string name="share">Share</string>
+    <string name="uhr"></string>
+    <string name="willshutdownin">Device will shutdown in</string>
+    <string name="specialthanks">Special thanks to John Kressel</string>
+    <string name="specialthankssum">for helping me writing this app and for the english translation. Tap here to check out his apps on Google Play!</string>
+    <string name="enableshutdowncountdown">Enable Shutdown Countdown</string>
+    <string name="nothanks">No thanks</string>
+    <string name="enable">Enable</string>
+    <string name="shutdowncountdowndesc">This will display a dialog 10 seconds before shutdown allowing you to extend or cancel the timer.\n\nPlease permit drawing over other apps in the following screen to enable this feature.</string>
+    <string name="reenablecountdowndesc">We noticed you previously activated this feature but we could not gain the permission to draw over other apps.\n\nPlease permit drawing over other apps in the following screen to enable this feature again.</string>
+    <string name="welcome">Welcome!</string>
+    <string name="roothint">This App works only on rooted devices! If you don\'t know what rooted means, you\'re most likely not rooted and this app won\'t work on your device, sorry.\nFor more information about rooting you can read more about it here: https://en.wikipedia.org/wiki/Rooting_(Android_OS)</string>
+    <string name="imrooted">I\'m rooted!</string>
+    <string name="exit">Exit</string>
+    <string name="close">CLOSE</string>
+    <string name="unabletoshutdown">Couldn\'t shutdown your device! Please check if root access granted. Also, installing busybox may help.</string>
+    <string name="boot">Boot</string>
+
+    <!--Pin Protection-->
+    <string name="pin_code_forgot_text">Forgot?</string>
+    <string name="pin_code_step_disable">Disable %d-digit Pincode</string>
+    <string name="pin_code_step_create">Create a %d-digit Pincode</string>
+    <string name="pin_code_step_change">Enter your current %d-digit Pincode</string>
+    <string name="pin_code_step_unlock">Enter your %d-digit Pincode</string>
+    <string name="pin_code_step_enable_confirm">Confirm your %d-digit Pincode</string>
+
+    <string name="pin_code_fingerprint_text">Fingerprint</string>
+    <string name="pin_code_fingerprint_success">Fingerprint recognized</string>
+    <string name="pin_code_fingerprint_not_recognized">Fingerprint not recognized. Try again</string>
+    <string name="at">at</string>
+    <string name="tomorrow">"tomorrow "</string>
+    <string name="shutdown_device_at_specific_time_of_day">Shutdown device at specific time of day.</string>
+    <string name="shutdown_device_in_set_time_in_minutes">Shutdown device in set time in minutes.</string>
+    <string name="shutdown_device_in_set_time_in_minutes_after_standby">Shutdown device in set time in minutes after device goes to standby.</string>
+    <string name="shutdown_device_after_set_time_in_minutes_after_the_device_turned_on">Shutdown device after set time in minutes after the device turned on.</string>
+    <string name="shake_to_extend">Shake to extend</string>
+    <string name="shake_device_to_extend_time_until_shutdown">Shake device to extend timer.</string>
+    <string name="shutdown_countdown">Shutdown Countdown</string>
+    <string name="show_countdown_dialog_10_seconds_before_shutdown">Show countdown dialog 10 seconds before shutdown.</string>
+    <string name="pin_protection">Pin Protection</string>
+    <string name="opening_the_app_extending_or_canceling_the_shutdown_timer_requires_a_pin">Opening the app, extending or canceling the shutdown timer requires a pin.</string>
+    <string name="change_pin">Change Pin</string>
+    <string name="headsuptimetitle">Heads-up Vibration/Sound … minutes before shutdown</string>
+    <string name="selectheadsupsound">Select Heads-up Sound</string>
+    <string name="haptic_heads_up">Haptic Heads-up</string>
+    <string name="short_vibration_in_set_time_before_the_device_shuts_down">Short vibration in set time before the device shuts down.</string>
+    <string name="acoustical_heads_up">Acoustical Heads-up</string>
+    <string name="play_short_sound_in_set_time_before_the_device_shuts_down">Play short sound in set time before the device shuts down.</string>
+    <string name="heads_up_sound">Heads-up Sound</string>
+    <string name="choose_sound_for_acoustical_heads_up">Choose sound for acoustical heads-up.</string>
+    <string name="heads_up_time">Heads-up Time</string>
+    <string name="set_time_before_shutdown_to_vibrate_play_sound_default_1">Set time before shutdown to vibrate/play sound (default 1)</string>
+    <string name="sound">Sound</string>
+    <string name="seconds2">seconds</string>
+    <string name="stoptimernowandstartbootmodewith" >.\nDo you want to stop the timer now and set boot timer instead?</string>
+    <string name="stoptimernowandstartinactivitymodewith" >.\nDo you want to stop the timer now and set inactivity timer instead?</string>
+    <string name="bootserviceactive">Timer already set to start on boot which possibly interferes with repeating time mode.\nDo you want to deactivate boot mode and start repeating time mode instead?</string>
+    <string name="start_repeating">start repeating</string>
+    <string name="start_once">start once</string>
+    <string name="set_always">set always</string>
+    <string name="set_once">set once</string>
+    <string name="inactivity">Inactivity</string>
+
+</resources>

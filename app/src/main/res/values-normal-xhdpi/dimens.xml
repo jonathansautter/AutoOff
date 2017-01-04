@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="card_margin_leftright">0dp</dimen>
+    <dimen name="circular_seekbar_margin">0dp</dimen>
+    <dimen name="margin_negative_20">20dp</dimen>
+    <dimen name="margin_timepicker_negative">0dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="fontsize_18">18sp</dimen>
+    <dimen name="fontsize_48">48sp</dimen>
+    <dimen name="fontsize_150">140sp</dimen>
+    <dimen name="fontsize_200">200sp</dimen>
+    <item name="timepicker_scale" format="float" type="dimen">1.0</item>
+</resources>

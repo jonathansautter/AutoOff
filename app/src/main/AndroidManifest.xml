@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.jonathansautter.autooff" >
+
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:name="de.jonathansautter.autooff.AutoOff"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="de.jonathansautter.autooff.MainActivity"
+            android:label="@string/app_name_short"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="de.jonathansautter.autooff.CustomPinActivity" android:theme="@style/MyDialog"/>
+        <activity android:name="de.jonathansautter.autooff.LockedNotificationActions" android:theme="@style/MyDialog"/>
+        <receiver android:name="de.jonathansautter.autooff.AlarmReceiver" />
+        <receiver android:name="de.jonathansautter.autooff.NotificationClickReceiver" />
+        <service android:name="de.jonathansautter.autooff.NotificationService" />
+        <receiver android:name="BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".ScreenOnOffService">
+            <intent-filter>
+                <action android:name="com.jonathansautter.alwaysdaydream.AEScreenOnOffService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

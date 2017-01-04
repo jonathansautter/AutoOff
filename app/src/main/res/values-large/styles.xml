@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="MyDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+
+</resources>
