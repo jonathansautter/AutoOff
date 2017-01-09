@@ -23,6 +23,7 @@ public class LockedNotificationActions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
 
         if (getResources().getBoolean(R.bool.portrait_only)){
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -158,10 +159,6 @@ public class LockedNotificationActions extends AppCompatActivity {
                                     } else {
                                         alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
                                     }
-
-                                    /*Intent serviceIntent = new Intent(LockedNotificationActions.this, NotificationService.class);
-                                    serviceIntent.putExtra("mode", "time");
-                                    startService(serviceIntent);*/
                                     //Log.d("AutoOff", "new shutdown time: " + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE));
                                     break;
                                 }
@@ -198,10 +195,4 @@ public class LockedNotificationActions extends AppCompatActivity {
             }
         }
     }
-
-    /*@Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        LockedNotificationActions.this.finish();
-    }*/
 }

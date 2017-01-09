@@ -97,7 +97,6 @@ public class Minute_Fragment extends android.support.v4.app.Fragment {
 
         if (timeServiceRunning || bootServiceRunning) {
             start.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.play, null));
-
             timelayout.startAnimation(zoom_out);
             seekbar.setVisibility(View.VISIBLE);
             handler.postDelayed(new Runnable() {
@@ -475,7 +474,6 @@ public class Minute_Fragment extends android.support.v4.app.Fragment {
 
             public void onFinish() {
                 minuteServiceRunning = false;
-                //settingsprefs.edit().putBoolean("countdownServiceRunning", countdownServiceRunning).apply();
             }
         }.start();
     }
@@ -496,7 +494,6 @@ public class Minute_Fragment extends android.support.v4.app.Fragment {
 
         @Override
         public void onProgressChanged(CircularSeekBar circularSeekBar, int progress, boolean fromUser) {
-
             progresstv.setText(String.valueOf(progress));
         }
 
@@ -529,19 +526,6 @@ public class Minute_Fragment extends android.support.v4.app.Fragment {
         Activity activity = getActivity();
         if (isAdded() && activity != null) {
             setup();
-        }
-    }
-
-    public void refresh() {
-        if (!minuteServiceRunning) {
-            settingsprefs = getActivity().getSharedPreferences("settings", 0);
-            seekbar = (CircularSeekBar) v.findViewById(R.id.circularSeekBar1);
-            seekbar.setProgress(0);
-            seekbar.setMax(settingsprefs.getInt("maxminutes", 60));
-            Activity activity = getActivity();
-            if (isAdded() && activity != null) {
-                setup();
-            }
         }
     }
 }

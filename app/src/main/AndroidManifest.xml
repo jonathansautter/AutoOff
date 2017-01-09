@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
 
@@ -26,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="de.jonathansautter.autooff.CrashReporter" />
+        <activity android:name="de.jonathansautter.autooff.Settings_Activity" />
+        <activity android:name="de.jonathansautter.autooff.About" />
         <activity android:name="de.jonathansautter.autooff.CustomPinActivity" android:theme="@style/MyDialog"/>
         <activity android:name="de.jonathansautter.autooff.LockedNotificationActions" android:theme="@style/MyDialog"/>
         <receiver android:name="de.jonathansautter.autooff.AlarmReceiver" />
@@ -37,11 +39,6 @@
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
         </receiver>
-        <service android:name=".ScreenOnOffService">
-            <intent-filter>
-                <action android:name="com.jonathansautter.alwaysdaydream.AEScreenOnOffService" />
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>

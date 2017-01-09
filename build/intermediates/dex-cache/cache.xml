@@ -3,147 +3,291 @@
 
     <item
         is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-support-media-compat-24.2.1_908033e971db3061d95c74988fdf97c1516d3c7a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.github.orangegangsters\lollipin\1.9.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="df88dbd6404dbe8e86fb0c76b11558aad9360997">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.github.orangegangsters-lollipin-1.9.1_2c093e954ed735ce155f66ef3b687706998679d3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.3.0\jars\libs\internal_impl-23.3.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="8813bdcf7583107c4873150075d17c8072ec50cf">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\internal_impl-23.3.0_3b9331caf5c40f99a406ca222f7793311265ce9a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_157eae3fc4301200efbd0da82381dea38fcdb522.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-support-core-utils-24.2.1_b39240270366623e1d84fd4a5b157928f02dd84d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-24.2.1_28d9522b5e94ed35767ffc246aa1bd01839bb3dc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-support-core-ui-24.2.1_bd1d1df2bfb327b80eba427b61ffef365f9d1936.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-support-compat-24.2.1_26f5d9f07bb424f7e46c7ba9d8293cff2d6cc45d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-support-fragment-24.2.1_72e05c44c17f07788ac83d7a1dfc28b18c0ed82d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.github.clans\fab\1.6.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="1c3b9743fe8bb166a90a7e98b9b9f1f8021d80cd">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.github.clans-fab-1.6.4_62f708f14b05203e21f8fbce93510095cf4afa8a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.github.omadahealth.typefaceview\typefaceview\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="07dffbcc0f6dd01ad713b600ec5006a245eb7f95">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.github.omadahealth.typefaceview-typefaceview-1.3.0_252772f72c96fa2a973e8e284104967bbb47c0ee.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.jpardogo.materialtabstrip\library\1.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="611c7708cd3df0d7ae99105d4df5af8eb25c4b32">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.jpardogo.materialtabstrip-library-1.1.0_6a237905f742f9318a9caf13b464f09555d69e02.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="a809555a2599054c3dcd1bf82b089315ac3a11df">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-support-v13-23.3.0_9e791dcefea478f616d3ed3683c5cdda60fcd9e5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_20dc8f86a1187960dd1ec6ca6ec41383f0ed1825.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_5a6fd55714eb318998cdbfe0d7493b28c4730169.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.1\jars\classes.jar"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.0"
         sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-cardview-v7-24.2.1_d01d304b756ce4ca6a697315b2ae09f6e6e69ff9.jar" />
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.2.1_c084b7f91dfbbaafb24242ed7d4dcaa09e2a7c74.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_edf7f93021bd91bcb05c6d446bd205315416399f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="8813bdcf7583107c4873150075d17c8072ec50cf">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_57c14b79f994bc816110be8dccbc3ab4c9bf7cca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.github.omadahealth.typefaceview\typefaceview\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="07dffbcc0f6dd01ad713b600ec5006a245eb7f95">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.github.omadahealth.typefaceview-typefaceview-1.3.0_177b4980a2e441f87b42743a13fca3a6f7a5db0a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="a809555a2599054c3dcd1bf82b089315ac3a11df">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-support-v13-23.3.0_e5cf46cbc5f7b2baa601befe9267b1071c2f335e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_adc242eae7f3f25f6531a3468418b485a4ae12e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_e940d6813921461547f97ed8f1a54ad9dde101a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_dd4e71745f7fa2fb73fe40885198b4b72aa74b5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_25f0051d91b580e47f3ded83e509a30435b91ce6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.github.orangegangsters\lollipin\1.9.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="df88dbd6404dbe8e86fb0c76b11558aad9360997">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.github.orangegangsters-lollipin-1.9.1_bc216dd8e74788a9e0bf171e40ab9f4713005596.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_08ed3a3245d6e80fc761b3575321b56f93b6ab7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_182a04df181cf669fa7abc2ddf0ba268410001e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_131f0cc6de5817bd5693dd6366de44f7be1bc0ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_7388035d3cf73b7f16aebd3f76eb59c584ece639.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_5af87f170d6bc3cb05cc0f41b782ae7acbe6e3f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_d39a2a5cf4011b4d57743c140485686dafa2e068.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.github.clans\fab\1.6.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="1c3b9743fe8bb166a90a7e98b9b9f1f8021d80cd">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.github.clans-fab-1.6.4_347eeb6e9b3ad36e674dbf43cc0d82edad8a7cec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_ca1774553aba20fb07a9c94d04cc40891eec73be.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_2a47fc835a2620201c5431efbb00b689670aae72.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.jpardogo.materialtabstrip\library\1.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="611c7708cd3df0d7ae99105d4df5af8eb25c4b32">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.jpardogo.materialtabstrip-library-1.1.0_dbb300bd4022ff4a5d961618413514166423a0fd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_f6ef60d4414355c7dc235f1fd86f17d51d05e503.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.github.orangegangsters\lollipin\1.9.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="df88dbd6404dbe8e86fb0c76b11558aad9360997">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.github.orangegangsters-lollipin-1.9.1_324739435cb3d496ee7029edba09b1eb0c1b9bed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\de.psdev.licensesdialog\licensesdialog\1.8.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="314eddf77281187272037224c55ba673aabee57c">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\de.psdev.licensesdialog-licensesdialog-1.8.1_112037a4bcdee193905c84421e6cb53e7e4c9ce7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_e3734e6b6e5004d169169f291d38bf1d27b457ba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_2897abeffad7f95fd1a273975666d0b7e5805f04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_143e075a5461653baaf8bfcfe4ed8f5108c4e90d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.jpardogo.materialtabstrip\library\1.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="611c7708cd3df0d7ae99105d4df5af8eb25c4b32">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.jpardogo.materialtabstrip-library-1.1.0_c8b92647fc3315028e07fa0f5b7a8aa7c55390ba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.github.clans\fab\1.6.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="1c3b9743fe8bb166a90a7e98b9b9f1f8021d80cd">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.github.clans-fab-1.6.4_e26fb07651bcd1ac4feef3735fddbc4fcf8cd06a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\de.psdev.licensesdialog\licensesdialog\1.8.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="314eddf77281187272037224c55ba673aabee57c">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\de.psdev.licensesdialog-licensesdialog-1.8.1_04081b1f63ad658fd47a31d92e854bf2b9d60fe9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_c789812d087ba46d7ab01a2f3cf8980fa456ad88.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.github.traex.rippleeffect\ripple\1.3.1-OG\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="20fd37394e8f87a379c84a6eaa31e54d59300d9e">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.github.traex.rippleeffect-ripple-1.3.1-OG_5f2375148281ed2a475a4d1f439c081d82263816.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_4206a4a7bb39ff2ed29efd2c63d003d659305feb.jar" />
     </item>
     <item
         is-multidex="false"
@@ -152,61 +296,142 @@
         optimize="true"
         revision="24.0.0"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\support-annotations-24.2.1_56f9c0d435e1b5de6382cbff958ca352d4f945c3.jar" />
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_56f9c0d435e1b5de6382cbff958ca352d4f945c3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.0"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_69929484b584459cbd1db1907cd6bd02b20b612b.jar" />
+        sha1="a809555a2599054c3dcd1bf82b089315ac3a11df">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-support-v13-23.3.0_88ecd3458d24600ce8bb0cdadb11c648c6477e3b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-24.2.1_be128af21d3a286d245f8bedca00de9aaf5d8a7b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-24.2.1_dc38a4eea386c4552f7d6a90bdb72adf5fc5e455.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-24.2.1_29132ec5898e896594b5ae7fc2aba3370f731d97.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\internal_impl-24.2.1_7b282475f517595daafeaeadc7373c2b74db84eb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Android Projects\ShutdownTimer\app\build\intermediates\exploded-aar\com.github.traex.rippleeffect\ripple\1.3.1-OG\jars\classes.jar"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.github.traex.rippleeffect\ripple\1.3.1-OG\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.0"
         sha1="20fd37394e8f87a379c84a6eaa31e54d59300d9e">
-        <dex dex="D:\Android Projects\ShutdownTimer\app\build\intermediates\pre-dexed\release\com.github.traex.rippleeffect-ripple-1.3.1-OG_e8c2710edef0960d0e26541bb22cf771e7c39463.jar" />
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.github.traex.rippleeffect-ripple-1.3.1-OG_a9bb1c1d90a04e0bcc70e6e28fc46f5eeaa6fbc6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.2.1_e5230225b0dbd2e1684dc681fd633c739bf35e8f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_f87b0219674b92a480a791b7627044263c5026a5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\jonat\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.1\f7be08ec23c21485b9b5a1cf1654c2ec8c58168d\jsr305-3.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="f7be08ec23c21485b9b5a1cf1654c2ec8c58168d">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\jsr305-3.0.1_53f229f4c36b8409d8a7df19f484a8674f130fd4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_3114b7e86741efa572a1d9c56086d02525bf242e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-v13\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="8813bdcf7583107c4873150075d17c8072ec50cf">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_40443d52417aeb2b62ef0fa29df6bc3164bfbf06.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.github.omadahealth.typefaceview\typefaceview\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="07dffbcc0f6dd01ad713b600ec5006a245eb7f95">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.github.omadahealth.typefaceview-typefaceview-1.3.0_6f51080f7e7298771c98db10e095c31b97170bd9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_887e66cc14647f09b17a7260a7106d9e52ecb422.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_30ace5131897a2be1f8fc86f322c68f959a6c0b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_b606f2aabf3587d318f15071c77cde0f7ce3d752.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_cef6058e3054f7ae0c4c9f7bbf4ffddbb15131d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\AutoOff Github\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="D:\Android Projects\AutoOff Github\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_c1f21f9d3d23de28115f97d6d791ed2f29ac9313.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_e78adaf3f9460328221618b26f243d9455208c0e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="D:\Android Projects\ShutdownTimerbackup\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_df9686c425c50b425e415ede73f4b443d0949a53.jar" />
     </item>
 
 </items>

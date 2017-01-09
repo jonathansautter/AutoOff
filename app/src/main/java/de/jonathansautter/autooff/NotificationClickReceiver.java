@@ -21,7 +21,6 @@ public class NotificationClickReceiver extends BroadcastReceiver {
         String action = (String) intent.getExtras().get("action");
         String mode = (String) intent.getExtras().get("mode");
 
-        //Log.d("AutoOff", "main active: "+MainActivity.main_active);
         if (settingsprefs.getBoolean("pinprotection", false) && !MainActivity.main_active) {
             Intent pinIntent = new Intent(context, LockedNotificationActions.class);
             pinIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -147,8 +146,6 @@ public class NotificationClickReceiver extends BroadcastReceiver {
                             final AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
                             alarmManager.cancel(pendingIntent);
 
-                            //context.stopService(new Intent(context, NotificationService.class));
-
                             if (System.currentTimeMillis() >= cal.getTimeInMillis()) {
                                 cal.add(Calendar.DATE, 1);
                             }
@@ -158,11 +155,6 @@ public class NotificationClickReceiver extends BroadcastReceiver {
                             } else {
                                 alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
                             }
-
-                            /*Intent serviceIntent = new Intent(context, NotificationService.class);
-                            serviceIntent.putExtra("mode", "time");
-                            context.startService(serviceIntent);*/
-                            //Log.d("AutoOff", "new shutdown time: " + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE));
                             break;
                         }
                         case "boot": {

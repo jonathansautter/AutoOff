@@ -9,8 +9,8 @@
     <string name="maxminutessum">Set maximum shutdown delay (default 60)</string>
     <string name="extensiontime">Extension Time</string>
     <string name="extensiontimesum">Set time to add to running timer (default 10)</string>
-    <string name="contact">Help/Bug report</string>
-    <string name="contactsum">Project on Github</string>
+    <string name="contact">Contact</string>
+    <string name="contactsum">E-Mail developer</string>
     <string name="disclaimer">Disclaimer</string>
     <string name="agree">AGREE</string>
     <string name="disagree">DON\'T AGREE</string>
@@ -21,7 +21,6 @@
     <string name="timeralreadysettoshutdownat">"The Timer is already set to shutdown at "</string>
     <string name="stoptimernowandshutdownin">".\nDo you want to stop the timer now and shutdown in "</string>
     <string name="minutesinstead">" minutes instead?"</string>
-    <string name="minutesafterstandbyinstead">" minutes after device goes to standby instead?"</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
     <string name="nosupermission">Could not gain superuser permissions</string>
@@ -53,9 +52,18 @@
     <string name="roothint">This App works only on rooted devices! If you don\'t know what rooted means, you\'re most likely not rooted and this app won\'t work on your device, sorry.\nFor more information about rooting you can read more about it here: https://en.wikipedia.org/wiki/Rooting_(Android_OS)</string>
     <string name="imrooted">I\'m rooted!</string>
     <string name="exit">Exit</string>
+    <string name="showlog">show log</string>
+    <string name="hidelog">hide log</string>
+    <string name="unabletoreceiveerrorlog">Unable to receive error log.</string>
+    <string name="weresorry">I\'m sorry…</string>
+    <string name="crashreportermessage">An error occorred. Sending me the log would really help me to fix the problem. Thanks!</string>
+    <string name="sendlog">Send Log</string>
+    <string name="autooffbugreport">AutoOff Bug Report</string>
+    <string name="autooffjustcrashed">Hi, AutoOff just crashed. Please take a look!\n\n</string>
     <string name="close">CLOSE</string>
     <string name="unabletoshutdown">Couldn\'t shutdown your device! Please check if root access granted. Also, installing busybox may help.</string>
     <string name="boot">Boot</string>
+    <string name="about">About</string>
 
     <!--Pin Protection-->
     <string name="pin_code_forgot_text">Forgot?</string>
@@ -72,7 +80,6 @@
     <string name="tomorrow">"tomorrow "</string>
     <string name="shutdown_device_at_specific_time_of_day">Shutdown device at specific time of day.</string>
     <string name="shutdown_device_in_set_time_in_minutes">Shutdown device in set time in minutes.</string>
-    <string name="shutdown_device_in_set_time_in_minutes_after_standby">Shutdown device in set time in minutes after device goes to standby.</string>
     <string name="shutdown_device_after_set_time_in_minutes_after_the_device_turned_on">Shutdown device after set time in minutes after the device turned on.</string>
     <string name="shake_to_extend">Shake to extend</string>
     <string name="shake_device_to_extend_time_until_shutdown">Shake device to extend timer.</string>
@@ -94,12 +101,18 @@
     <string name="sound">Sound</string>
     <string name="seconds2">seconds</string>
     <string name="stoptimernowandstartbootmodewith" >.\nDo you want to stop the timer now and set boot timer instead?</string>
-    <string name="stoptimernowandstartinactivitymodewith" >.\nDo you want to stop the timer now and set inactivity timer instead?</string>
     <string name="bootserviceactive">Timer already set to start on boot which possibly interferes with repeating time mode.\nDo you want to deactivate boot mode and start repeating time mode instead?</string>
     <string name="start_repeating">start repeating</string>
     <string name="start_once">start once</string>
     <string name="set_always">set always</string>
     <string name="set_once">set once</string>
-    <string name="inactivity">Inactivity</string>
+    <string name="author">Author</string>
+    <string name="licences">Licences</string>
+    <string name="contributions">Contributions</string>
+    <string name="report_a_bug">Report a bug</string>
+    <string name="found_a_bug_please_let_me_know">Found a bug? Please let me know!</string>
+    <string name="fork_on_github">Fork on GitHub</string>
+    <string name="please_consider_rating_this_app_if_you_find_it_useful">Please consider rating this app if you find it useful.</string>
+    <string name="tell_your_friends_about_this_awesome_app">Tell your friends about this awesome app.</string>
 
 </resources>

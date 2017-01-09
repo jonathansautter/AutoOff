@@ -75,15 +75,11 @@ public class NotificationService extends Service {
             case "time":
                 endTime = settingsprefs.getLong("timeShutdownTime", 0);
                 break;
-            case "inactivity":
-                endTime = settingsprefs.getLong("inactivityShutdownTime", 0);
-                break;
         }
         lastendTime = endTime;
         duration = endTime - now;
         Calendar calll = Calendar.getInstance();
         calll.setTimeInMillis(endTime);
-
         createCountDownTimer();
         return START_STICKY;
     }
@@ -128,6 +124,7 @@ public class NotificationService extends Service {
                     if (settingsprefs.getBoolean("hapticHeadsUpActive", false) && !shutdownHapticplayed) {
                         if (millisUntilFinished <= headsUpTime) {
                             Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                            // Check whether device hardware has a Vibrator
                             if (mVibrator.hasVibrator()) {
                                 long[] pattern = {0, 300, 100, 500};
                                 mVibrator.vibrate(pattern, -1);
@@ -147,9 +144,6 @@ public class NotificationService extends Service {
                         break;
                     case "time":
                         endTime = settingsprefs.getLong("timeShutdownTime", 0);
-                        break;
-                    case "inactivity":
-                        endTime = settingsprefs.getLong("inactivityShutdownTime", 0);
                         break;
                 }
                 if (lastendTime != endTime) {
@@ -172,6 +166,7 @@ public class NotificationService extends Service {
 
     private void handleShakeEvent() {
         Vibrator mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        // Check whether device hardware has a Vibrator
         if (mVibrator.hasVibrator()) {
             mVibrator.vibrate(800);
         }
@@ -189,9 +184,6 @@ public class NotificationService extends Service {
             case "time":
                 shutdownTime = settingsprefs.getLong("timeShutdownTime", 0);
                 break;
-            case "inactivity":
-                shutdownTime = settingsprefs.getLong("inactivityShutdownTime", 0);
-                break;
         }
 
         newShutdownTime = shutdownTime + (extensiontime * 60000);
@@ -205,9 +197,6 @@ public class NotificationService extends Service {
                 break;
             case "time":
                 settingsprefs.edit().putLong("timeShutdownTime", newShutdownTime).apply();
-                break;
-            case "inactivity":
-                settingsprefs.edit().putLong("inactivityShutdownTime", newShutdownTime).apply();
                 break;
         }
 
@@ -283,30 +272,6 @@ public class NotificationService extends Service {
                 //Log.d("AutoOff", "new shutdown time: " + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE));
                 break;
             }
-            case "inactivity": {
-                Calendar cal = Calendar.getInstance();
-                Date addedMinutes = new Date(newShutdownTime);
-                cal.setTime(addedMinutes);
-                settingsprefs.edit().putLong("inactivityShutdownTime", cal.getTimeInMillis()).apply();
-
-                Intent intent2 = new Intent(getApplicationContext(), AlarmReceiver.class);
-                intent2.putExtra("inactivityAlarm", true);
-                final PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent2, 0);
-                final AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                alarmManager.cancel(pendingIntent);
-
-                if (System.currentTimeMillis() >= cal.getTimeInMillis()) {
-                    cal.add(Calendar.DATE, 1);
-                }
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
-                } else {
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
-                }
-                //Log.d("AutoOff", "new shutdown time: " + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE));
-                break;
-            }
         }
     }
 
@@ -361,31 +326,19 @@ public class NotificationService extends Service {
 
         Intent cancelIntent = new Intent(this, NotificationClickReceiver.class);
         cancelIntent.putExtra("action", "cancel");
-        switch (mode) {
-            case "boot":
-                cancelIntent.putExtra("mode", "boot");
-                break;
-            case "minute":
-                cancelIntent.putExtra("mode", "minute");
-                break;
-            case "inactivity":
-                cancelIntent.putExtra("mode", "inactivity");
-                break;
+        if (mode.equals("boot")) {
+            cancelIntent.putExtra("mode", "boot");
+        } else if (mode.equals("minute")) {
+            cancelIntent.putExtra("mode", "minute");
         }
         PendingIntent pendingIntentCancel = PendingIntent.getBroadcast(this, 1, cancelIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Intent extendIntent = new Intent(this, NotificationClickReceiver.class);
         extendIntent.putExtra("action", "extend");
-        switch (mode) {
-            case "boot":
-                extendIntent.putExtra("mode", "boot");
-                break;
-            case "minute":
-                extendIntent.putExtra("mode", "minute");
-                break;
-            case "inactivity":
-                extendIntent.putExtra("mode", "inactivity");
-                break;
+        if (mode.equals("boot")) {
+            extendIntent.putExtra("mode", "boot");
+        } else if (mode.equals("minute")) {
+            extendIntent.putExtra("mode", "minute");
         }
         PendingIntent pendingIntentExtend = PendingIntent.getBroadcast(this, 2, extendIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 

@@ -8,8 +8,8 @@ android {
         applicationId "de.jonathansautter.autooff"
         minSdkVersion 16
         targetSdkVersion 24
-        versionCode 8
-        versionName "1.4"
+        versionCode 9
+        versionName "1.5"
     }
     buildTypes {
         release {
@@ -27,4 +27,5 @@ dependencies {
     compile ('com.github.orangegangsters:lollipin:1.9.1@aar') {
         transitive = true
     }
+    compile('de.psdev.licensesdialog:licensesdialog:1.8.1')
 }

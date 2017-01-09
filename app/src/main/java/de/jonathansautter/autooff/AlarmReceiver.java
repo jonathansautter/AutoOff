@@ -23,12 +23,6 @@ import java.util.Date;
 
 public class AlarmReceiver extends BroadcastReceiver {
 
-    /*
-
-    Called once the shutdown timer finishes. Showing the shutdown countdown and shutting the device down.
-
-     */
-
     private int seconds = 10;
     private Context ct;
     private Handler handler = new Handler();
@@ -50,8 +44,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             mode = "time";
         } else if (settingsprefs.getBoolean("bootServiceRunning", false)) {
             mode = "boot";
-        } else if (settingsprefs.getBoolean("inactivityServiceRunning", false)) {
-            mode = "inactivity";
         }
 
         if (settingsprefs.getBoolean("sysOverlay", false)) {
@@ -100,7 +92,6 @@ public class AlarmReceiver extends BroadcastReceiver {
         final TextView secondstv = (TextView) view.findViewById(R.id.seconds);
 
         final long[] lastShutdownTime = {0};
-
         switch (mode) {
             case "boot":
                 lastShutdownTime[0] = settingsprefs.getLong("bootShutdownTime", 0);
@@ -111,11 +102,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             case "time":
                 lastShutdownTime[0] = settingsprefs.getLong("timeShutdownTime", 0);
                 break;
-            case "inactivity":
-                lastShutdownTime[0] = settingsprefs.getLong("inactivityShutdownTime", 0);
-                break;
         }
-
         final Runnable mUpdateTimeTask = new Runnable() {
 
             public void run() {
@@ -131,8 +118,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                         case "time":
                             shutdownTime = settingsprefs.getLong("timeShutdownTime", 0);
                             break;
-                        case "inactivity":
-                            shutdownTime = settingsprefs.getLong("inactivityShutdownTime", 0);
                     }
                     if (shutdownTime == lastShutdownTime[0]) {
                         lastShutdownTime[0] = shutdownTime;
@@ -245,12 +230,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                     ct.startService(serviceIntent);
                 }
                 break;
-            case "inactivity":
-                settingsprefs.edit().putBoolean("inactivityServiceRunning", false).apply();
-                if (settingsprefs.getBoolean("inactivityServiceOnce", true)) {
-                    settingsprefs.edit().putBoolean("inactivityServiceActivated", false).apply();
-                }
-                break;
         }
     }
 
@@ -272,13 +251,9 @@ public class AlarmReceiver extends BroadcastReceiver {
                     settingsprefs.edit().putBoolean("timeServiceActivated", false).commit();
                 }
                 break;
-            case "inactivity":
-                settingsprefs.edit().putBoolean("inactivityServiceRunning", false).commit();
-                if (settingsprefs.getBoolean("inactivityServiceOnce", true)) {
-                    settingsprefs.edit().putBoolean("inactivityServiceActivated", false).commit();
-                }
-                break;
         }
+
+        //int shutdownmode = settingsprefs.getInt("shutdownmode", 1);
 
         String[] shutdownCommand = new String[]{"/system/xbin/su", "-c", "reboot -p"};
 
@@ -286,6 +261,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             shutdownCommand = new String[]{"/system/bin/su", "-c", "reboot -p"};
         } else if (shutdownmode == 3) {
             shutdownCommand = new String[]{"su", "-c", "reboot -p"};
+            //shutdownCommand = new String[]{"sud", "-c", "reboot -p"}; // forced wrong command!
         }
 
         try {
@@ -328,9 +304,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             case "time":
                 shutdownTime = settingsprefs.getLong("timeShutdownTime", 0);
                 break;
-            case "inactivity":
-                shutdownTime = settingsprefs.getLong("inactivityShutdownTime", 0);
-                break;
         }
         long newShutdownTime = shutdownTime + (extensiontime * 60000);
         switch (mode) {
@@ -344,10 +317,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                 break;
             case "time":
                 settingsprefs.edit().putLong("timeShutdownTime", newShutdownTime).apply();
-                break;
-            case "inactivity":
-                settingsprefs.edit().putLong("inactivityShutdownTime", newShutdownTime).apply();
-                settingsprefs.edit().putInt("lastInactivityShutdownDelay", settingsprefs.getInt("lastInactivityShutdownDelay", 0) + extensiontime).apply();
                 break;
         }
 
@@ -381,10 +350,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                 settingsprefs.edit().putBoolean("timeServiceRunning", true).apply();
                 settingsprefs.edit().putBoolean("timeServiceActivated", true).apply();
                 serviceIntent.putExtra("mode", "time");
-                break;
-            case "inactivity":
-                settingsprefs.edit().putBoolean("inactivityServiceRunning", true).apply();
-                serviceIntent.putExtra("mode", "inactivity");
                 break;
         }
         ct.startService(serviceIntent);

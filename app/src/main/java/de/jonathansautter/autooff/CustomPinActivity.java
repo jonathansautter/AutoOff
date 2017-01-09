@@ -31,4 +31,9 @@ public class CustomPinActivity extends AppLockActivity {
         return super.getPinLength();//you can override this method to change the pin length from the default 4
     }
 
+    /*@Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        CustomPinActivity.this.finish();
+    }*/
 }

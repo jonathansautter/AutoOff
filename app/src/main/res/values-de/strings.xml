@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="cancel">Abbrechen</string>
-    <string name="contact">Hilfe/Fehlerbericht</string>
+    <string name="contact">Kontakt</string>
     <string name="agree">EINVERSTANDEN</string>
-    <string name="contactsum">Projekt auf Github</string>
+    <string name="contactsum">E-Mail an Entwickler</string>
     <string name="countdown">Countdown</string>
     <string name="disagree">NICHT EINVERSTANDEN</string>
     <string name="disclaimer">Haftungsausschluss</string>
@@ -14,7 +14,6 @@
     <string name="extensiontimesum">Zeit die beim Verlängern hinzugefügt wird (Standard 10)</string>
     <string name="maxminutessum">Maximale Abschaltverzögerung einstellen (Standard 60)</string>
     <string name="minutesinstead">" Minuten abschalten?"</string>
-    <string name="minutesafterstandbyinstead">" Minuten nachdem das Gerät in den Standby-Modus wechselt abschalten?"</string>
     <string name="no">NEIN</string>
     <string name="noemailclient">Kein E-Mail Klient gefunden!</string>
     <string name="nosupermission">Konnte keine superuser Rechte erlangen</string>
@@ -51,7 +50,16 @@
     <string name="imrooted">Ich bin gerootet!</string>
     <string name="roothint">Diese App funktioniert nur auf gerooteten Geräten! Wenn Sie nicht wissen, was gerootet bedeutet, ist Ihr Gerät höchstwahrscheinlich nicht gerootet und diese App wird auf Ihrem Gerät nicht funktionieren.\nWeitere Informationen über das Rooten finden Sie hier: https://www.droidwiki.de/wiki/Root</string>
     <string name="welcome">Willkommen!</string>
+    <string name="autooffbugreport">AutoOff Fehlerbericht</string>
+    <string name="autooffjustcrashed">Hi, AutoOff ist gerade abgestürzt. Bitte schauen Sie sich das an!\n\n</string>
+    <string name="crashreportermessage">Ein Fehler ist aufgetreten. Bitte senden Sie mir das Fehlerprotokoll damit ich den Fehler schnell beheben kann. Danke!</string>
+    <string name="hidelog">Fehlerprotokoll verbergen</string>
+    <string name="sendlog">Protokoll senden</string>
+    <string name="showlog">Fehlerprotokoll einblenden</string>
+    <string name="unabletoreceiveerrorlog">Fehlerprotokoll konnte nicht ausgelesen werden.</string>
+    <string name="weresorry">Es tut mir leid…</string>
     <string name="close">SCHLIEßEN</string>
+    <string name="about">Über</string>
 
     <!--Pin Protection-->
     <string name="pin_code_forgot_text">Vergessen?</string>
@@ -78,7 +86,6 @@
     <string name="shutdown_device_after_set_time_in_minutes_after_the_device_turned_on">Schaltet das Gerät nach Ablauf der eingestellten Zeit in Minuten aus, nachdem das Gerät gestartet wurde.</string>
     <string name="shutdown_device_at_specific_time_of_day">Schaltet das Gerät zu einer bestimmten Uhrzeit aus.</string>
     <string name="shutdown_device_in_set_time_in_minutes">Schaltet das Gerät nach Ablauf der eingestellten Zeit in Minuten aus.</string>
-    <string name="shutdown_device_in_set_time_in_minutes_after_standby">Schaltet das Gerät nach Ablauf der eingestellten Zeit in Minuten aus nachdem das Gerät in den Standby-Modus wechselt.</string>
     <string name="acoustical_heads_up">Akustischer Abschalthinweis</string>
     <string name="choose_sound_for_acoustical_heads_up">Ton für Abschalthinweis wählen</string>
     <string name="haptic_heads_up">Haptischer Abschalthinweis</string>
@@ -92,10 +99,17 @@
     <string name="short_vibration_in_set_time_before_the_device_shuts_down">Kurze Vibration zu eingestellter Zeit vor dem Abschalten.</string>
     <string name="seconds2">Sekunden</string>
     <string name="stoptimernowandstartbootmodewith">" eingestellt.\nMöchten Sie den Timer jetzt stoppen und stattdessen den Gerätestart Timer aktivieren?"</string>
-    <string name="stoptimernowandstartinactivitymodewith">" eingestellt.\nMöchten Sie den Timer jetzt stoppen und stattdessen den Inaktivitäts Timer aktivieren?"</string>
     <string name="bootserviceactive">Der Gerätestart Timer ist aktiviert und überschneidet sich möglicherweise mit dem wiederholenden Zeit Timer.\nMöchten Sie den Gerätestart Timer jetzt deaktivieren und stattdessen den Zeit Timer aktivieren?</string>
     <string name="start_once">starte einmal</string>
     <string name="start_repeating">starte wiederholend</string>
     <string name="set_always">aktiviere bei jedem Start</string>
     <string name="set_once">aktiviere einmal</string>
+    <string name="author">Autor</string>
+    <string name="licences">Lizenzen</string>
+    <string name="contributions">Beiträge</string>
+    <string name="report_a_bug">Fehler melden</string>
+    <string name="found_a_bug_please_let_me_know">Einen Fehler gefunden? Lass es mich wissen!</string>
+    <string name="fork_on_github">Fork auf GitHub</string>
+    <string name="please_consider_rating_this_app_if_you_find_it_useful">Hinterlasse eine Bewertung wenn Du diese App hilfreich findest.</string>
+    <string name="tell_your_friends_about_this_awesome_app">Erzähl Deinen Freunden von dieser App.</string>
 </resources>

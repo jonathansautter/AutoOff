@@ -188,7 +188,6 @@ public class Time_Fragment extends android.support.v4.app.Fragment {
                 } else {
                     alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
                 }
-
             }
         });
 

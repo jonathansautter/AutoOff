@@ -1,7 +1,6 @@
 package de.jonathansautter.autooff;
 
 import android.annotation.TargetApi;
-import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,7 +8,6 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +18,6 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.github.orangegangsters.lollipin.lib.managers.AppLock;
@@ -63,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getResources().getBoolean(R.bool.portrait_only)){
+        Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this));
+        if (getResources().getBoolean(R.bool.portrait_only)) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
         setContentView(R.layout.activity_main);
@@ -130,8 +128,6 @@ public class MainActivity extends AppCompatActivity {
             sysoverlaypermission();
         }
 
-        //placeRebootFile();
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().setElevation(0);
         }
@@ -144,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 .getDisplayMetrics());
         int lastUsedTab = settingsprefs.getInt("lastUsedTab", 0);
         if (pager != null) {
-            pager.setOffscreenPageLimit(4);
+            pager.setOffscreenPageLimit(2);
             pager.setAdapter(pageAdapter);
 
             // Bind the tabs to the ViewPager
@@ -186,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
         if (settingsprefs.getBoolean("firstLaunch", true)) {
             settingsprefs.edit().putBoolean("firstLaunch", false).apply();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (!Settings.canDrawOverlays(getApplicationContext())) {
+                if (!android.provider.Settings.canDrawOverlays(getApplicationContext())) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle);
                     builder.setTitle(R.string.enableshutdowncountdown);
                     builder.setMessage(R.string.shutdowncountdowndesc);
@@ -217,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } else if (settingsprefs.getBoolean("sysOverlay", false)) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (!Settings.canDrawOverlays(getApplicationContext())) {
+                if (!android.provider.Settings.canDrawOverlays(getApplicationContext())) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle);
                     builder.setTitle(R.string.enableshutdowncountdown);
                     builder.setMessage(getString(R.string.reenablecountdowndesc));
@@ -251,8 +247,8 @@ public class MainActivity extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.M)
     public void checkDrawOverlayPermission() {
-        if (!Settings.canDrawOverlays(getApplicationContext())) {
-            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+        if (!android.provider.Settings.canDrawOverlays(getApplicationContext())) {
+            Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                     Uri.parse("package:" + getPackageName()));
             startActivityForResult(intent, REQUEST_CODE);
         }
@@ -263,24 +259,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE) {
-            if (Settings.canDrawOverlays(this)) {
+            if (android.provider.Settings.canDrawOverlays(this)) {
                 // continue here - permission was granted
                 settingsprefs.edit().putBoolean("sysOverlay", true).apply();
-                Settings_Fragment fragment = (Settings_Fragment) pageAdapter.getRegisteredFragment(3);
-                if (fragment != null) {
-                    fragment.setup();
-                }
             } else {
                 settingsprefs.edit().putBoolean("sysOverlay", false).apply();
             }
         }
-    }
-
-    public void refreshTabs() {
-        Minute_Fragment minute_fragment = (Minute_Fragment) pageAdapter.getRegisteredFragment(0);
-        Boot_Fragment boot_fragment = (Boot_Fragment) pageAdapter.getRegisteredFragment(2);
-        minute_fragment.refresh();
-        boot_fragment.refresh();
     }
 
     @Override
@@ -296,35 +281,15 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.rate:
-                Uri uri = Uri.parse("market://details?id=" + getPackageName());
-                Intent rateintent = new Intent(Intent.ACTION_VIEW, uri);
-                // To count with Play market backstack, After pressing back button,
-                // to taken back to our application, we need to add following flags to intent.
-                rateintent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
-                        Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-                try {
-                    startActivity(rateintent);
-                } catch (ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
-                }
+            case R.id.settings:
+                Intent intent = new Intent(MainActivity.this, Settings_Activity.class);
+                startActivity(intent);
                 return true;
-            case R.id.share:
-                try {
-                    Intent shareintent = new Intent(Intent.ACTION_SEND);
-                    shareintent.setType("text/plain");
-                    shareintent.putExtra(Intent.EXTRA_SUBJECT, R.string.app_name);
-                    String content = getString(R.string.sharetext) + getPackageName();
-                    shareintent.putExtra(Intent.EXTRA_TEXT, content);
-                    startActivity(Intent.createChooser(shareintent, getString(R.string.sharevia)));
-                } catch (Exception e) {
-                    Toast.makeText(this, R.string.somethingwentwrong, Toast.LENGTH_LONG).show();
-                }
+            case R.id.about:
+                Intent intent2 = new Intent(MainActivity.this, About.class);
+                startActivity(intent2);
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
 }

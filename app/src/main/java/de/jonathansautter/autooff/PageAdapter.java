@@ -7,15 +7,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
-public class PageAdapter extends FragmentPagerAdapter {
+class PageAdapter extends FragmentPagerAdapter {
 
     private SparseArray<Fragment> registeredFragments = new SparseArray<>();
     private final String[] TITLES;
 
-    public PageAdapter(FragmentManager fm, Context ct) {
+    PageAdapter(FragmentManager fm, Context ct) {
         super(fm);
-        Context mContext = ct;
-        TITLES =  new String[]{mContext.getString(R.string.countdown), mContext.getString(R.string.time), mContext.getString(R.string.boot), mContext.getString(R.string.inactivity), mContext.getString(R.string.settings)};
+        TITLES =  new String[]{ct.getString(R.string.countdown), ct.getString(R.string.time), ct.getString(R.string.boot)};
     }
 
     @Override
@@ -39,10 +38,6 @@ public class PageAdapter extends FragmentPagerAdapter {
                 return new Time_Fragment();
             case 2:
                 return new Boot_Fragment();
-            case 3:
-                return new Inactivity_Fragment();
-            case 4:
-                return new Settings_Fragment();
         }
     }
 
@@ -59,7 +54,7 @@ public class PageAdapter extends FragmentPagerAdapter {
         super.destroyItem(container, position, object);
     }
 
-    public Fragment getRegisteredFragment(int position) {
+    Fragment getRegisteredFragment(int position) {
         return registeredFragments.get(position);
     }
 

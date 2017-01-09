@@ -35,12 +35,6 @@ import java.util.Locale;
 
 public class Boot_Fragment extends android.support.v4.app.Fragment {
 
-    /*
-
-    In this mode the timer is triggered once the device boots up.
-
-     */
-
     private View v;
     private TextView progresstv;
     private FloatingActionMenu fab_menu;
@@ -67,6 +61,11 @@ public class Boot_Fragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.boot_fragment, container, false);
+
+        /*Activity activity = getActivity();
+        if (isAdded() && activity != null) {
+            setup();
+        }*/
 
         return v;
     }
@@ -516,6 +515,7 @@ public class Boot_Fragment extends android.support.v4.app.Fragment {
 
             public void onFinish() {
                 bootServiceRunning = false;
+                //settingsprefs.edit().putBoolean("bootServiceRunning", bootServiceRunning).apply();
             }
         }.start();
     }
@@ -635,19 +635,6 @@ public class Boot_Fragment extends android.support.v4.app.Fragment {
         Activity activity = getActivity();
         if (isAdded() && activity != null) {
             setup();
-        }
-    }
-
-    public void refresh() {
-        if (!bootServiceRunning) {
-            settingsprefs = getActivity().getSharedPreferences("settings", 0);
-            seekbar = (CircularSeekBar) v.findViewById(R.id.circularSeekBar1);
-            seekbar.setProgress(0);
-            seekbar.setMax(settingsprefs.getInt("maxminutes", 60));
-            Activity activity = getActivity();
-            if (isAdded() && activity != null) {
-                setup();
-            }
         }
     }
 }
