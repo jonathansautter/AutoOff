@@ -64,6 +64,9 @@
     <string name="unabletoshutdown">Couldn\'t shutdown your device! Please check if root access granted. Also, installing busybox may help.</string>
     <string name="boot">Boot</string>
     <string name="about">About</string>
+    <string name="inactivity">Inactivity</string>
+    <string name="stoptimernowandstartinactivitymodewith" >.\nDo you want to stop the timer now and set inactivity timer instead?</string>
+    <string name="shutdown_device_in_set_time_in_minutes_after_standby">Shutdown device in set time in minutes after device goes to standby.</string>
 
     <!--Pin Protection-->
     <string name="pin_code_forgot_text">Forgot?</string>
