@@ -10,3 +10,5 @@ You can set a short sound or vibration to notify you about an upcoming shutdown 
 The app can be locked by a pincode or fingerprint to prevent someone stopping or extending a timer.
 
 Perfect for automatically turning off your phone after you fall asleep and avoiding radiation from your device for the whole night.
+
+Google Play Link: https://play.google.com/store/apps/details?id=de.jonathansautter.autooff
