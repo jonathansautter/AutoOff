@@ -60,9 +60,6 @@
     <string name="weresorry">Es tut mir leid…</string>
     <string name="close">SCHLIEßEN</string>
     <string name="about">Über</string>
-    <string name="inactivity">Inaktivität</string>
-    <string name="stoptimernowandstartinactivitymodewith">" eingestellt.\nMöchten Sie den Timer jetzt stoppen und stattdessen den Inaktivitäts Timer aktivieren?"</string>
-    <string name="shutdown_device_in_set_time_in_minutes_after_standby">Schaltet das Gerät nach Ablauf der eingestellten Zeit in Minuten aus nachdem das Gerät in den Standby-Modus wechselt.</string>
 
     <!--Pin Protection-->
     <string name="pin_code_forgot_text">Vergessen?</string>

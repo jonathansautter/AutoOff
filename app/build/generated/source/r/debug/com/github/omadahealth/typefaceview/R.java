@@ -432,7 +432,7 @@ public final class R {
 		public static final int abc_screen_toolbar = 0x7f040016;
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f040017;
 		public static final int abc_search_view = 0x7f040018;
-		public static final int support_simple_spinner_dropdown_item = 0x7f04002f;
+		public static final int support_simple_spinner_dropdown_item = 0x7f04002e;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f070000;
@@ -451,7 +451,7 @@ public final class R {
 		public static final int abc_shareactionprovider_share_with = 0x7f070010;
 		public static final int abc_shareactionprovider_share_with_application = 0x7f070011;
 		public static final int abc_toolbar_collapse_description = 0x7f070012;
-		public static final int app_name = 0x7f070093;
+		public static final int app_name = 0x7f070090;
 	}
 	public static final class style {
 		public static final int Animation_AppCompat_DropDownUp = 0x7f09008f;

@@ -44,8 +44,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             mode = "time";
         } else if (settingsprefs.getBoolean("bootServiceRunning", false)) {
             mode = "boot";
-        } else if (settingsprefs.getBoolean("inactivityServiceRunning", false)) {
-            mode = "inactivity";
         }
 
         if (settingsprefs.getBoolean("sysOverlay", false)) {
@@ -104,9 +102,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             case "time":
                 lastShutdownTime[0] = settingsprefs.getLong("timeShutdownTime", 0);
                 break;
-            case "inactivity":
-                lastShutdownTime[0] = settingsprefs.getLong("inactivityShutdownTime", 0);
-                break;
         }
         final Runnable mUpdateTimeTask = new Runnable() {
 
@@ -122,9 +117,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                             break;
                         case "time":
                             shutdownTime = settingsprefs.getLong("timeShutdownTime", 0);
-                            break;
-                        case "inactivity":
-                            shutdownTime = settingsprefs.getLong("inactivityShutdownTime", 0);
                             break;
                     }
                     if (shutdownTime == lastShutdownTime[0]) {
@@ -238,12 +230,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                     ct.startService(serviceIntent);
                 }
                 break;
-            case "inactivity":
-                settingsprefs.edit().putBoolean("inactivityServiceRunning", false).apply();
-                if (settingsprefs.getBoolean("inactivityServiceOnce", true)) {
-                    settingsprefs.edit().putBoolean("inactivityServiceActivated", false).apply();
-                }
-                break;
         }
     }
 
@@ -263,12 +249,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                 settingsprefs.edit().putBoolean("timeServiceRunning", false).commit();
                 if (settingsprefs.getBoolean("timeServiceOnce", true)) {
                     settingsprefs.edit().putBoolean("timeServiceActivated", false).commit();
-                }
-                break;
-            case "inactivity":
-                settingsprefs.edit().putBoolean("inactivityServiceRunning", false).commit();
-                if (settingsprefs.getBoolean("inactivityServiceOnce", true)) {
-                    settingsprefs.edit().putBoolean("inactivityServiceActivated", false).commit();
                 }
                 break;
         }
@@ -324,9 +304,6 @@ public class AlarmReceiver extends BroadcastReceiver {
             case "time":
                 shutdownTime = settingsprefs.getLong("timeShutdownTime", 0);
                 break;
-            case "inactivity":
-                shutdownTime = settingsprefs.getLong("inactivityShutdownTime", 0);
-                break;
         }
         long newShutdownTime = shutdownTime + (extensiontime * 60000);
         switch (mode) {
@@ -340,10 +317,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                 break;
             case "time":
                 settingsprefs.edit().putLong("timeShutdownTime", newShutdownTime).apply();
-                break;
-            case "inactivity":
-                settingsprefs.edit().putLong("inactivityShutdownTime", newShutdownTime).apply();
-                settingsprefs.edit().putInt("lastInactivityShutdownDelay", settingsprefs.getInt("lastInactivityShutdownDelay", 0) + extensiontime).apply();
                 break;
         }
 
@@ -377,10 +350,6 @@ public class AlarmReceiver extends BroadcastReceiver {
                 settingsprefs.edit().putBoolean("timeServiceRunning", true).apply();
                 settingsprefs.edit().putBoolean("timeServiceActivated", true).apply();
                 serviceIntent.putExtra("mode", "time");
-                break;
-            case "inactivity":
-                settingsprefs.edit().putBoolean("inactivityServiceRunning", true).apply();
-                serviceIntent.putExtra("mode", "inactivity");
                 break;
         }
         ct.startService(serviceIntent);
