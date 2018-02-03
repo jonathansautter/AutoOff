@@ -41,7 +41,7 @@ public final class R {
 		public static final int psts_tab_title = 0x7f0c00ad;
 	}
 	public static final class layout {
-		public static final int psts_tab = 0x7f040029;
+		public static final int psts_tab = 0x7f04002a;
 	}
 	public static final class styleable {
 		public static final int[] PagerSlidingTabStrip = { 0x7f010113, 0x7f010114, 0x7f010115, 0x7f010116, 0x7f010117, 0x7f010118, 0x7f010119, 0x7f01011a, 0x7f01011b, 0x7f01011c, 0x7f01011d, 0x7f01011e, 0x7f01011f, 0x7f010120, 0x7f010121, 0x7f010122, 0x7f010123, 0x7f010124 };
