@@ -14,7 +14,7 @@ class PageAdapter extends FragmentPagerAdapter {
 
     PageAdapter(FragmentManager fm, Context ct) {
         super(fm);
-        TITLES =  new String[]{ct.getString(R.string.countdown), ct.getString(R.string.time), ct.getString(R.string.boot), ct.getString(R.string.inactivity)};
+        TITLES =  new String[]{ct.getString(R.string.countdown), ct.getString(R.string.time), ct.getString(R.string.boot)};
     }
 
     @Override
@@ -38,8 +38,6 @@ class PageAdapter extends FragmentPagerAdapter {
                 return new Time_Fragment();
             case 2:
                 return new Boot_Fragment();
-            case 3:
-                return new Inactivity_Fragment();
         }
     }
 
