@@ -44,7 +44,7 @@ public class About extends AppCompatActivity {
         RelativeLayout bugreport = (RelativeLayout) findViewById(R.id.bugreportly);
         RelativeLayout fork = (RelativeLayout) findViewById(R.id.forkly);
         RelativeLayout rate = (RelativeLayout) findViewById(R.id.rately);
-        RelativeLayout share = (RelativeLayout) findViewById(R.id.sharely);
+        RelativeLayout share = findViewById(R.id.sharely);
 
         author.setOnClickListener(new View.OnClickListener() {
             @Override
