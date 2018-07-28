@@ -44,6 +44,10 @@ public class AlarmReceiver extends BroadcastReceiver {
             mode = "time";
         } else if (settingsprefs.getBoolean("bootServiceRunning", false)) {
             mode = "boot";
+        } else {
+            mode = "unknown";
+            somethingWentWrong();
+            return;
         }
 
         if (settingsprefs.getBoolean("sysOverlay", false)) {
@@ -78,7 +82,11 @@ public class AlarmReceiver extends BroadcastReceiver {
         final WindowManager manager = (WindowManager) ct.getApplicationContext().getSystemService(Context.WINDOW_SERVICE);
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(PixelFormat.TRANSLUCENT);
         layoutParams.gravity = Gravity.CENTER;
-        layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            layoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        } else {
+            layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+        }
         layoutParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
         layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
         layoutParams.alpha = 1.0f;
@@ -102,6 +110,9 @@ public class AlarmReceiver extends BroadcastReceiver {
             case "time":
                 lastShutdownTime[0] = settingsprefs.getLong("timeShutdownTime", 0);
                 break;
+            case "unknown":
+                somethingWentWrong();
+                return;
         }
         final Runnable mUpdateTimeTask = new Runnable() {
 
@@ -157,6 +168,13 @@ public class AlarmReceiver extends BroadcastReceiver {
             }
         });
         manager.addView(view, layoutParams);
+    }
+
+    private void somethingWentWrong() {
+        ct.stopService(new Intent(ct, NotificationService.class));
+
+        NotificationManager nm = (NotificationManager) ct.getSystemService(Context.NOTIFICATION_SERVICE);
+        nm.cancel(1);
     }
 
     private void cancel_shutdown() {
@@ -261,14 +279,17 @@ public class AlarmReceiver extends BroadcastReceiver {
             shutdownCommand = new String[]{"/system/bin/su", "-c", "reboot -p"};
         } else if (shutdownmode == 3) {
             shutdownCommand = new String[]{"su", "-c", "reboot -p"};
-            //shutdownCommand = new String[]{"sud", "-c", "reboot -p"}; // forced wrong command!
+        } else if (shutdownmode == 4) {
+            shutdownCommand = new String[]{"/system/bin/sh", "su", "reboot -p"};
+        } else if (shutdownmode == 5) {
+            shutdownCommand = new String[]{"su", "-c", "busybox poweroff -f"};
         }
 
         try {
             Process proc = Runtime.getRuntime().exec(shutdownCommand);
             proc.waitFor();
         } catch (Exception ex) {
-            if (shutdownmode < 3) {
+            if (shutdownmode < 5) {
                 shutdownmode++;
                 shutdown();
             } else {

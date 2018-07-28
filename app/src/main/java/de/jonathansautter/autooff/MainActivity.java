@@ -247,11 +247,49 @@ public class MainActivity extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.M)
     public void checkDrawOverlayPermission() {
-        if (!android.provider.Settings.canDrawOverlays(getApplicationContext())) {
-            Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:" + getPackageName()));
-            startActivityForResult(intent, REQUEST_CODE);
+        try {
+            if (!android.provider.Settings.canDrawOverlays(getApplicationContext())) {
+                Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, REQUEST_CODE);
+            } else {
+                manualOverlayPermissionInstructions();
+            }
+        } catch (Exception e) {
+            manualOverlayPermissionInstructions();
         }
+    }
+
+    private void manualOverlayPermissionInstructions() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle);
+        builder.setTitle("Permission needed");
+        builder.setMessage("To use the Shutdown Countdown Dialog, please enable the \"Draw over other apps permission for AutoOff\"\n\n" +
+                        "1. Go to the Device Settings.\n" +
+                        "2. Tap \"Apps\"\n" +
+                        "3. On the top right, tap the gear icon.\n" +
+                        "4. Under Advanced, chose \"Draw over other apps\"\n" +
+                        "5. Find AutoOff in the list and tap it.\n" +
+                        "6. Toggle \"Permit drawing over other apps\" to ON.");
+        builder.setCancelable(false);
+
+        builder.setPositiveButton(R.string.done, new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton(R.string.nothanks, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                settingsprefs.edit().putBoolean("sysOverlay", false).apply();
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @TargetApi(Build.VERSION_CODES.M)

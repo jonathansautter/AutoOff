@@ -2,6 +2,7 @@ package de.jonathansautter.autooff;
 
 import android.app.AlarmManager;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -342,14 +343,35 @@ public class NotificationService extends Service {
         }
         PendingIntent pendingIntentExtend = PendingIntent.getBroadcast(this, 2, extendIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        Notification notification = builder.setContentIntent(pendingIntent)
-                .setSmallIcon(R.drawable.notification_icon).setTicker(getString(R.string.app_name)).setWhen(System.currentTimeMillis())
-                .setAutoCancel(false).setContentTitle(getString(R.string.app_name)).setOngoing(true)
-                .setContentText(getString(R.string.shutdownin) + counter)
-                .addAction(R.drawable.stop, getString(R.string.stop), pendingIntentCancel)
-                .addAction(R.drawable.addtime, getString(R.string.extend), pendingIntentExtend)
-                .build();
+        Notification notification;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            String NOTIFICATION_CHANNEL_ID = "default";
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "AutoOff", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationChannel.setSound(null, null);
+            notificationChannel.enableVibration(false);
+            nm.createNotificationChannel(notificationChannel);
+
+            Notification.Action stopAction = new Notification.Action.Builder(R.drawable.stop, getString(R.string.stop), pendingIntentCancel).build();
+            Notification.Action extendAction = new Notification.Action.Builder(R.drawable.addtime, getString(R.string.extend), pendingIntentExtend).build();
+
+            notification = new Notification.Builder(getApplicationContext(), "default")
+                    .setContentIntent(pendingIntent)
+                    .setSmallIcon(R.drawable.notification_icon).setTicker(getString(R.string.app_name)).setWhen(System.currentTimeMillis())
+                    .setAutoCancel(false).setContentTitle(getString(R.string.app_name)).setOngoing(true)
+                    .setContentText(getString(R.string.shutdownin) + counter)
+                    .addAction(stopAction)
+                    .addAction(extendAction)
+                    .build();
+        } else {
+            Notification.Builder builder = new Notification.Builder(getApplicationContext());
+            notification = builder.setContentIntent(pendingIntent)
+                    .setSmallIcon(R.drawable.notification_icon).setTicker(getString(R.string.app_name)).setWhen(System.currentTimeMillis())
+                    .setAutoCancel(false).setContentTitle(getString(R.string.app_name)).setOngoing(true)
+                    .setContentText(getString(R.string.shutdownin) + counter)
+                    .addAction(R.drawable.stop, getString(R.string.stop), pendingIntentCancel)
+                    .addAction(R.drawable.addtime, getString(R.string.extend), pendingIntentExtend)
+                    .build();
+        }
         notification.flags |= Notification.FLAG_NO_CLEAR;
         nm.notify(1, notification);
     }
@@ -392,14 +414,35 @@ public class NotificationService extends Service {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
         String time = sdf.format(cal.getTime());
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        Notification notification = builder.setContentIntent(pendingIntent)
-                .setSmallIcon(R.drawable.notification_icon).setTicker(getString(R.string.app_name)).setWhen(System.currentTimeMillis())
-                .setAutoCancel(false).setContentTitle(getString(R.string.app_name)).setOngoing(true)
-                .setContentText(getString(R.string.shutdown) + " " + tomorrow + getString(R.string.at) + " " + time + " " + getString(R.string.uhr))
-                .addAction(R.drawable.stop, getString(R.string.stop), pendingIntentCancel)
-                .addAction(R.drawable.addtime, getString(R.string.extend), pendingIntentExtend)
-                .build();
+        Notification notification;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            String NOTIFICATION_CHANNEL_ID = "default";
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "AutoOff", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationChannel.setSound(null, null);
+            notificationChannel.enableVibration(false);
+            nm.createNotificationChannel(notificationChannel);
+
+            Notification.Action stopAction = new Notification.Action.Builder(R.drawable.stop, getString(R.string.stop), pendingIntentCancel).build();
+            Notification.Action extendAction = new Notification.Action.Builder(R.drawable.addtime, getString(R.string.extend), pendingIntentExtend).build();
+
+            notification = new Notification.Builder(getApplicationContext(), "default")
+                    .setContentIntent(pendingIntent)
+                    .setSmallIcon(R.drawable.notification_icon).setTicker(getString(R.string.app_name)).setWhen(System.currentTimeMillis())
+                    .setAutoCancel(false).setContentTitle(getString(R.string.app_name)).setOngoing(true)
+                    .setContentText(getString(R.string.shutdown) + " " + tomorrow + getString(R.string.at) + " " + time + " " + getString(R.string.uhr))
+                    .addAction(stopAction)
+                    .addAction(extendAction)
+                    .build();
+        } else {
+            Notification.Builder builder = new Notification.Builder(getApplicationContext());
+            notification = builder.setContentIntent(pendingIntent)
+                    .setSmallIcon(R.drawable.notification_icon).setTicker(getString(R.string.app_name)).setWhen(System.currentTimeMillis())
+                    .setAutoCancel(false).setContentTitle(getString(R.string.app_name)).setOngoing(true)
+                    .setContentText(getString(R.string.shutdown) + " " + tomorrow + getString(R.string.at) + " " + time + " " + getString(R.string.uhr))
+                    .addAction(R.drawable.stop, getString(R.string.stop), pendingIntentCancel)
+                    .addAction(R.drawable.addtime, getString(R.string.extend), pendingIntentExtend)
+                    .build();
+        }
         notification.flags |= Notification.FLAG_NO_CLEAR;
         nm.notify(1, notification);
     }

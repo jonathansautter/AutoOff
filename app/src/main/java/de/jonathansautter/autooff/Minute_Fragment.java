@@ -16,6 +16,7 @@ import android.support.v7.app.AlertDialog;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +94,9 @@ public class Minute_Fragment extends android.support.v4.app.Fragment {
 
 
         RelativeLayout main = (RelativeLayout) v.findViewById(R.id.main);
-        main.startAnimation(fade_in);
+        //if (main.getVisibility() == View.INVISIBLE) {
+            main.startAnimation(fade_in);
+        //}
 
         if (timeServiceRunning || bootServiceRunning) {
             start.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.play, null));
@@ -109,21 +112,27 @@ public class Minute_Fragment extends android.support.v4.app.Fragment {
             if (minuteServiceRunning) {
                 start.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.stop, null));
                 seekbar.setVisibility(View.INVISIBLE);
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        start.startAnimation(fab_in);
-                        start.setVisibility(View.VISIBLE);
-                    }
-                }, 1000);
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        extend.startAnimation(fab_in2);
-                        extend.setVisibility(View.VISIBLE);
-                    }
-                }, 1500);
-                countdownTime();
+                if (start.getVisibility() == View.INVISIBLE) {
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            start.startAnimation(fab_in);
+                            start.setVisibility(View.VISIBLE);
+                        }
+                    }, 1000);
+                }
+                if (extend.getVisibility() == View.INVISIBLE) {
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            extend.startAnimation(fab_in2);
+                            extend.setVisibility(View.VISIBLE);
+                        }
+                    }, 1500);
+                }
+                if (countDownTimer == null) {
+                    countdownTime();
+                }
                 if (!isMyServiceRunning(NotificationService.class)) {
                     setNotification();
                 }
@@ -340,28 +349,33 @@ public class Minute_Fragment extends android.support.v4.app.Fragment {
     private void cancelTimer() {
         Activity activity = getActivity();
         if (isAdded() && activity != null) {
-            minuteServiceRunning = false;
-            countDownTimer.cancel();
-
-            int restTime = Integer.parseInt(progresstv.getText().toString());
-            seekbar.setMax(settingsprefs.getInt("maxminutes", 60));
-            if (restTime > seekbar.getMax()) {
-                restTime = settingsprefs.getInt("lastMinuteShutdownDelay", seekbar.getMax() / 2);
-                progresstv.setText(String.valueOf(restTime));
-            }
-            seekbar.setProgress(restTime);
-
-            start.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.play, null));
-            extend.startAnimation(fab_out);
-            extend.setVisibility(View.GONE);
-            timelayout.startAnimation(zoom_out);
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    seekbar.startAnimation(fade_in);
-                    seekbar.setVisibility(View.VISIBLE);
+            if (minuteServiceRunning) {
+                minuteServiceRunning = false;
+                if (countDownTimer != null) {
+                    countDownTimer.cancel();
                 }
-            }, 200);
+
+                Log.d("saujo", "cancelTimer called");
+                int restTime = Integer.parseInt(progresstv.getText().toString());
+                seekbar.setMax(settingsprefs.getInt("maxminutes", 60));
+                if (restTime > seekbar.getMax()) {
+                    restTime = settingsprefs.getInt("lastMinuteShutdownDelay", seekbar.getMax() / 2);
+                    progresstv.setText(String.valueOf(restTime));
+                }
+                seekbar.setProgress(restTime);
+
+                start.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.play, null));
+                extend.startAnimation(fab_out);
+                extend.setVisibility(View.GONE);
+                timelayout.startAnimation(zoom_out);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        seekbar.startAnimation(fade_in);
+                        seekbar.setVisibility(View.VISIBLE);
+                    }
+                }, 200);
+            }
         }
     }
 
@@ -527,5 +541,11 @@ public class Minute_Fragment extends android.support.v4.app.Fragment {
         if (isAdded() && activity != null) {
             setup();
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
     }
 }

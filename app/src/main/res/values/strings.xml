@@ -114,5 +114,6 @@
     <string name="fork_on_github">Fork on GitHub</string>
     <string name="please_consider_rating_this_app_if_you_find_it_useful">Please consider rating this app if you find it useful.</string>
     <string name="tell_your_friends_about_this_awesome_app">Tell your friends about this awesome app.</string>
+    <string name="done">done</string>
 
 </resources>

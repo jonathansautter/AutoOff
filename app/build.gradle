@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.0"
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "de.jonathansautter.autooff"
         minSdkVersion 16
-        targetSdkVersion 24
-        versionCode 9
-        versionName "1.5"
+        targetSdkVersion 26
+        versionCode 12
+        versionName "1.6"
     }
     buildTypes {
         release {
@@ -18,14 +18,22 @@ android {
         }
     }
 }
+
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:cardview-v7:24.2.1'
-    compile 'com.jpardogo.materialtabstrip:library:1.1.0'
-    compile 'com.github.clans:fab:1.6.4'
-    compile ('com.github.orangegangsters:lollipin:1.9.1@aar') {
-        transitive = true
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation ('com.jpardogo.materialtabstrip:library:1.1.0') {
+        exclude group: 'com.android.support'
     }
-    compile('de.psdev.licensesdialog:licensesdialog:1.8.1')
+    implementation ('com.github.clans:fab:1.6.4') {
+        exclude group: 'com.android.support'
+    }
+    implementation ('com.github.orangegangsters:lollipin:1.9.1@aar') {
+        transitive = true
+        exclude group: 'com.android.support'
+    }
+    implementation('de.psdev.licensesdialog:licensesdialog:1.8.1') {
+        exclude group: 'com.android.support'
+    }
 }

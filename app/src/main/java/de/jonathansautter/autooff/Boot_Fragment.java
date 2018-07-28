@@ -103,43 +103,53 @@ public class Boot_Fragment extends android.support.v4.app.Fragment {
 
 
         RelativeLayout main = (RelativeLayout) v.findViewById(R.id.main);
-        main.startAnimation(fade_in);
+        //if (main.getVisibility() == View.INVISIBLE) {
+            main.startAnimation(fade_in);
+        //}
 
         bootServiceRunning = settingsprefs.getBoolean("bootServiceRunning", false);
         bootServiceActivated = settingsprefs.getBoolean("bootServiceActivated", false);
 
         if (bootServiceRunning) {
             seekbar.setVisibility(View.INVISIBLE);
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    stop.setImageResource(R.drawable.stop);
-                    stop.startAnimation(fab_in);
-                    stop.setVisibility(View.VISIBLE);
-                }
-            }, 1000);
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    extend.startAnimation(fab_in2);
-                    extend.setVisibility(View.VISIBLE);
-                }
-            }, 1500);
-            countdownTime();
+            if (stop.getVisibility() == View.INVISIBLE) {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        stop.setImageResource(R.drawable.stop);
+                        stop.startAnimation(fab_in);
+                        stop.setVisibility(View.VISIBLE);
+                    }
+                }, 1000);
+            }
+            if (extend.getVisibility() == View.INVISIBLE) {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        extend.startAnimation(fab_in2);
+                        extend.setVisibility(View.VISIBLE);
+                    }
+                }, 1500);
+            }
+            if (countDownTimer == null) {
+                countdownTime();
+            }
             progresstv.setText(String.valueOf(settingsprefs.getInt("lastBootShutdownDelay", 30)));
             if (!isMyServiceRunning(NotificationService.class)) {
                 setNotification();
             }
         } else if (bootServiceActivated) {
             seekbar.setVisibility(View.INVISIBLE);
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    stop.setImageResource(R.drawable.cancel);
-                    stop.startAnimation(fab_in);
-                    stop.setVisibility(View.VISIBLE);
-                }
-            }, 1000);
+            if (stop.getVisibility() == View.INVISIBLE) {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        stop.setImageResource(R.drawable.cancel);
+                        stop.startAnimation(fab_in);
+                        stop.setVisibility(View.VISIBLE);
+                    }
+                }, 1000);
+            }
             progresstv.setText(String.valueOf(settingsprefs.getInt("lastBootShutdownDelay", 30)));
         } else {
             timelayout.startAnimation(zoom_out);
